@@ -1,8 +1,7 @@
 function randInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
-
-function rangeArray(start,end,interval) {
+function rangeArray(start, end, interval) {
     let array = [];
 
     if (interval === undefined) {
@@ -12,9 +11,8 @@ function rangeArray(start,end,interval) {
     for (let i = start; i < end; i += interval) {
         array.push(i);
     }
-    return(array);
+    return (array);
 }
-
 function shuffle(array) {
     let shuffled = [];
     let startLen = array.length;
@@ -23,9 +21,8 @@ function shuffle(array) {
         let random = randInt(array.length);
         shuffled.push(array.splice(random, 1));
     }
-    return(shuffled);
+    return (shuffled);
 }
-
 function printBars(array, barChar) {
     let bars = array;
 
@@ -38,7 +35,6 @@ function printBars(array, barChar) {
         console.log(barChar.repeat(bar));
     }
 }
-
 function testShuffleBias(tests) {
     let stats = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     for (let i = 0; i < tests; i++) {
@@ -48,9 +44,8 @@ function testShuffleBias(tests) {
     }
     for (let i = 0; i < stats.length; i++) {
         const picked = stats[i];
-        console.log(i+1 + ": %" + tests / picked);
+        console.log(i + 1 + ": %" + tests / picked);
     }
     return stats;
 }
-
-testShuffleBias(100000);
+testShuffleBias(10000);
