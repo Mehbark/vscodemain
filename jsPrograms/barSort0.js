@@ -39,6 +39,18 @@ function printBars(array, barChar) {
     }
 }
 
-let bars = rangeArray(1,10);
-bars = shuffle(bars);
-printBars(bars);
+function testShuffleBias(tests) {
+    let stats = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    for (let i = 0; i < tests; i++) {
+        let bars = rangeArray(1, 10);
+        bars = shuffle(bars);
+        stats[bars[0] - 1]++;
+    }
+    for (let i = 0; i < stats.length; i++) {
+        const picked = stats[i];
+        console.log(i+1 + ": %" + tests / picked);
+    }
+    return stats;
+}
+
+testShuffleBias(10000);
