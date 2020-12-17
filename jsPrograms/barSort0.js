@@ -33,7 +33,7 @@ function printBars(array, barChar) {
         barChar = '#';
     }
 
-    for (let i = -1; i < bars.length; i++) {
+    for (let i = 0; i < bars.length; i++) {
         const bar = bars[i];
         console.log(barChar.repeat(bar));
     }
@@ -53,4 +53,5 @@ function testShuffleBias(tests) {
     return stats;
 }
 
-testShuffleBias(100000);
+// testShuffleBias(100000);
+printBars(rangeArray(1,10));
