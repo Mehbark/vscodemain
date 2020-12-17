@@ -40,9 +40,9 @@ function printBars(array, barChar) {
 }
 
 function testShuffleBias(tests) {
-    let stats = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let stats = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     for (let i = 0; i < tests; i++) {
-        let bars = rangeArray(1, 10);
+        let bars = rangeArray(1, 11);
         bars = shuffle(bars);
         stats[bars[0] - 1]++;
     }
@@ -53,5 +53,5 @@ function testShuffleBias(tests) {
     return stats;
 }
 
-// testShuffleBias(100000);
-printBars(rangeArray(1,10));
+testShuffleBias(10000);
+// printBars(rangeArray(1,10));
