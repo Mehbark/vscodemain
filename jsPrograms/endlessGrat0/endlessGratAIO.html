@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <title>E N D L E S S</title>
+  <script>
+    let totalMoney = 0;
+    let moneyPerAct = 1;
+    let level = 1;
+
+    let currencyList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let currency = "A";
+    let prestige = 0;
+
+    function updateMoney() {
+      document.getElementById(
+        "totalMoney"
+      ).innerHTML = `${totalMoney} ${currency}`;
+    }
+
+    function makeMoney() {
+      totalMoney += moneyPerAct;
+      updateMoney();
+    }
+
+    function upgrade1() {
+      if (totalMoney >= moneyPerAct * 10) {
+        totalMoney -= moneyPerAct * 10;
+        level += 1;
+        moneyPerAct *= 2;
+        updateMoney();
+        document.getElementById("upgrade").innerHTML = `Level ${
+          level + 1
+        }: Doubles profits! (${moneyPerAct * 10})`;
+      }
+    }
+
+    function getCurrencyName(prestige) {
+      return currencyList[prestige - 26 * Math.floor(prestige / 26)].repeat(
+        Math.floor(prestige / 26) + 1
+      );
+    }
+
+    function prestige1() {
+      if (totalMoney >= 1000000000) {
+        prestige++;
+        currency = getCurrencyName(prestige);
+        totalMoney = 0;
+        moneyPerAct = 1;
+        level = 1;
+        document.getElementById("upgrade").innerHTML = `Level ${
+          level + 1
+        }: Doubles profits! (${moneyPerAct * 10})`;
+        document.getElementById(
+          "prestige"
+        ).innerHTML = `Prestige to ${getCurrencyName(
+          prestige + 1
+        )} (10000000000 ${currency})`;
+        updateMoney();
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: black;
+    }
+    h1 {
+      color: white;
+    }
+    h2 {
+      color: white;
+    }
+    .button {
+      display: inline-block;
+      cursor: pointer;
+    }
+  </style>
+  <head>
+    <h1 id="totalMoney">0 A</h1>
+    <button class="button" id="makeMoney" onclick="makeMoney();">
+      AAAAAAAAAAAA
+    </button>
+    <h2>Upgrades:</h2>
+    <button id="upgrade" onclick="upgrade1();">
+      Level 2: Doubles profits! (10)
+    </button>
+    <br />
+    <button id="prestige" onclick="prestige1();">
+      Prestige to B (10000000000 A)
+    </button>
+  </head>
+</html>

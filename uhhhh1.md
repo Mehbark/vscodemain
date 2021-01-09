@@ -1,0 +1,1 @@
+It's weird to think that so many things have had a lot of hard work put into them by groups of people. Even the simplest things can have generations of devolpment behind them.

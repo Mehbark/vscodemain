@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <canvas id="canvas" width="800" height="800"></canvas>
+    <script type="application/javascript">
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+      ctx.fillStyle = "rgba(232, 235, 52, 0.05)";
+      var i = 1;
+      function moveIg() {
+        console.log(":(");
+        ctx.fillRect(i, i, i, i);
+        i += 1;
+      }
+      function run() {
+        for (let i = 0; i < 1000; i++) {
+          moveIg();
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <button onclick="run();">hi</button>
+  </body>
+</html>

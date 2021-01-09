@@ -1,6 +1,6 @@
 function anger() {
     document.getElementById("h0").innerHTML = ">:(";
-    console.log("so, this is being called then???");
+    console.log("so, this is being called then???\ni am going to lose my mind");
 }
 function yeah() {
     const input = document.querySelector('input');
