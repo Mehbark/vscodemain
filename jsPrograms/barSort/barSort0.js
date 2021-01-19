@@ -1,11 +1,25 @@
-const canvas = document.getElementById("canvas");
+const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d");
-
+;
 var array = rangeArray(1, 501);
+
+/**
+ * Returns a random integer
+ * @param {number} max The maximum value that will be returned
+ * @returns {number} A random number from 0 to max
+ */
 
 function randInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
+
+/**
+ * Returns an array with numbers from start to end, increasing by interval every time 
+ * @param {number} start The first number in the generated list
+ * @param {number} end The last number in the generated list
+ * @param {number} [interval] The amount that each element in the generated list should increase by, defaults to 1
+ * @returns {Array} 
+ */
 
 function rangeArray(start, end, interval) {
   let array = [];
@@ -104,3 +118,4 @@ function bubble_Sort(a) {
 
 //testShuffleBias(10000);
 // printBars(rangeArray(1,10));
+rangeArray()//
