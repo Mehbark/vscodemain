@@ -15,15 +15,32 @@ client.on("ready", () => {
 client.on("message", (message) => {
   if (message.content[0] === prefix) {
     const cmd = message.content.slice(1, message.content.length);
-    if (cmd === "avatar") {
-      message.channel.send(message.author.displayAvatarURL());
-    }
-    if (cmd === "spamMe") {
-      for (let i = 0; i < 100; i++) {
-        message.channel.send(`${message.author}`);
-      }
+    switch (cmd) {
+      case "avatar":
+        message.channel.send(message.author.displayAvatarURL());
+        break;
+
+      /*
+      case "spamMe":
+        for (let i = 0; i < 100; i++) {
+          message.channel.send(`${message.author}`);
+        }
+        break;
+      */
+
+      default:
+        message.channel.send(`Command \"${cmd}\" not found.`);
     }
   }
+  const member = message.guild.members.resolve(message.author);
+  member
+    .kick("loud")
+    .then(() => {
+      message.channel.send("too loud");
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 });
 
 client.on("typingStart", (channel, user) => {
@@ -46,5 +63,18 @@ client.on("typingStart", (channel, user) => {
   };
   task.call();
 });
+
+// client.on("messageReactionAdd", (messageReaction, user) => {
+//   console.log("reaction");
+//   const member = messageReaction.message.guild.resolve(user);
+//   member
+//     .kick("loud")
+//     .then(() => {
+//       messageReaction.channel.send("too loud");
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//     });
+// });
 
 client.login("NzQ2MDI3NDcxOTQ5NzkxMjU1.Xz6WOQ.DE1LVlUucaaoQOy-3LmWbrRT2Ao");

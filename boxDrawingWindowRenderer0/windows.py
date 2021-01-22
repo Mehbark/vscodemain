@@ -2,7 +2,19 @@ class Sandbox:
   def __init__(self, windows):
     self.windows = windows
   def render(self):
-    render = [[" ",]*10, [" ",]*10, [" ",]*10, [" ",]*10, [" ",]*10, [" ",]*10, [" ",]*10, [" ",]*10, [" ",]*10, [" ",]*10, [" ",]*10, ]
+    render = [
+              [" ",]*10, 
+              [" ",]*10,
+              [" ",]*10,
+              [" ",]*10,
+              [" ",]*10,
+              [" ",]*10,
+              [" ",]*10,
+              [" ",]*10,
+              [" ",]*10,
+              [" ",]*10,
+              [" ",]*10,
+              ]
     for layer, x, y, width, height in self.windows:
       if layer > 0:
         for i in range(x, x+width):
