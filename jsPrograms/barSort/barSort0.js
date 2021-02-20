@@ -1,7 +1,7 @@
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d");
-;
-var array = rangeArray(1, 501);
+
+var converted = rangeArray(1, 501);
 
 /**
  * Returns a random integer

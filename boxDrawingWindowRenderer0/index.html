@@ -1,17 +1,32 @@
 <!DOCTYPE html>
+
 <html>
   <head>
-    <script src="windows.js"></script>
     <style>
       body {
         background-color: black;
       }
-      p {
+      #sandbox {
         color: white;
+        font-family: consolas;
+        background-color: black;
+        border: none;
+      }
+      #window {
+        background-color: white;
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        left: 50%;
+        top: 50%;
+        margin-left: 300px; /* This is half the width */
+        margin-top: 200px; /* This is half the height */
       }
     </style>
   </head>
   <body>
-    <p id="sandbox">Placeholderrr</p>
+    <output id="sandbox">Placeholderrrr</output>
+    <canvas id="window"></canvas>
+    <script src="windows.js"></script>
   </body>
 </html>
